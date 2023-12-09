@@ -1,0 +1,34 @@
+// reading binary file
+#include <iostream.h>
+#include <fstream.h>
+
+const char * filename = "file.bin";
+int i=0,y=0,z=0;
+int main () 
+{
+  char * buffer;
+  long size;
+  ifstream file (filename, ios::in|ios::binary|ios::ate);
+  size = file.tellg();
+  file.seekg (0, ios::beg);
+  buffer = new char [size];
+  file.read (buffer, size);
+  for(i+4<10241;i++)
+    {
+       y=buffer2[i]*buffer2[i+1]*buffer2[i+2]*buffer2[i+3]*buffer2[i+4];
+       if(z<y)
+       {
+         z=y;
+         cout << z << endl;
+       }
+
+    } 
+  
+  
+  file.close();
+
+  cout << "the complete file is in a buffer";
+
+  delete[] buffer;
+  return 0;
+}
